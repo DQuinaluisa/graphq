@@ -1,0 +1,110 @@
+
+
+type Usuario {
+    _id: ID!
+     nombre: String
+    apellido: String
+    nickname: String
+    email: String
+    passw: String
+}
+
+type Estudiante {
+    _id: ID!
+    nombre: String
+    apellido: String
+    email: String
+    passw: String
+    imagePath: String
+   
+}
+
+type Profesor {
+    _id: ID!
+    nombre: String
+    apellido: String
+    email: String
+    passw: String
+    imagePath: String
+}
+
+
+
+
+type Query {
+    getEstudiantes: [Estudiante]
+    getEstudiante(_id: ID!): [Estudiante]
+    getProfesores: [Profesor]
+    getProfesor(_id: ID!): [Profesor]
+    getUsuarios: [Usuario]
+    getUsuario(_id: ID!): [Usuario]
+}
+
+
+
+input UsuarioInput {
+    nombre: String
+    apellido: String
+    nickname: String
+    email: String
+    passw: String
+}
+
+input EstudianteInput {
+    nombre: String
+    apellido: String
+    email: String
+    passw: String
+    imagePath: String
+}
+
+
+
+input ProfesorInput {
+      nombre: String
+    apellido: String
+    email: String
+    passw: String
+    imagePath: String
+}
+
+
+type Mutation {
+    createUsuario(input: UsuarioInput!): [Usuario]
+    updateUsuario(_id: ID!, input: UsuarioEditarInput): [Usuario]
+
+    createEstudiante(input: EstudianteInput!): [Estudiante]
+    updateEstudiante(_id: ID!, input: EstudianteEditarInput): [Estudiante]
+
+    createProfesor(input: ProfesorInput): [Profesor]
+    updateProfesor(_id: ID!, input: ProfesorEditarInput): [Profesor]
+}
+
+
+input UsuarioEditarInput {
+     nombre: String
+    apellido: String
+    nickname: String
+    email: String
+    passw: String
+}
+
+
+input EstudianteEditarInput {
+     nombre: String
+    apellido: String
+    email: String
+    passw: String
+    imagePath: String
+}
+
+
+input ProfesorEditarInput {
+    nombre: String
+    apellido: String
+    email: String
+    passw: String
+    imagePath: String
+}
+
+
